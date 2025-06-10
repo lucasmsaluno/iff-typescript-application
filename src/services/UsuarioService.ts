@@ -9,7 +9,6 @@ export class UsuarioService {
   }
 
   public async criarUsuario(usuario: Usuario): Promise<number> {
-    // Validações básicas (poderiam ser extraídas para utilitários)
     if (!usuario.name || !usuario.email || !usuario.password) {
       throw new Error('Nome, email e senha são obrigatórios.');
     }
@@ -26,8 +25,6 @@ export class UsuarioService {
     if (usuario.password.length < 6) {
       throw new Error('A senha deve ter no mínimo 6 caracteres.');
     }
-
-    // Salva no repositório (banco)
     return this.repo.salvar(usuario);
   }
 }
