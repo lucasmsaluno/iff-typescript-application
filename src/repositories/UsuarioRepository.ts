@@ -3,7 +3,6 @@ import { Usuario } from '../models/Usuario';
 
 const db = new sqlite3.Database('database.db');
 
-// Garante que a tabela exista
 db.run(`CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
